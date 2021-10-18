@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      클릭 =><a
+        href="https://github.com/code-squad/test-item-pool/blob/master/level2-common/level2.md"
+        >숫자 야구게임</a
+      >
+    </h2>
+    <script>
+      let randNum = Math.floor(Math.random() * (999 - 100 + 1)) + 0;
+      randNum = String(randNum);
+      randNum = randNum.split("");
+
+      let num = prompt("세자리 숫자를 입력해주세요");
+      num = num.split("");
+
+      let strike = 0;
+      let ball = 0;
+      for (var x = 0; x < 3; x++) {
+        if (randNum[x] === num[x]) {
+          strike++;
+          break;
+        }
+        for (var y = 0; y < 3; y++) {
+          if (randNum[x] === num[y]) {
+            ball++;
+            break;
+          }
+        }
+      }
+
+      console.log("랜덤 숫자: " + randNum.join(""));
+      console.log("입력 숫자: " + num.join(""));
+
+      if (strike === 0) {
+        if (ball === 0) {
+          console.log("낫싱");
+        } else {
+          console.log(ball + " 볼");
+        }
+      } else {
+        if (ball === 0) {
+          console.log(strike + "스트라이크");
+        } else console.log(strike + "스트라이크" + ball + " 볼");
+      }
+    </script>
+  </body>
+</html>
