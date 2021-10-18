@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      클릭 =><a
+        href="https://programmers.co.kr/learn/courses/30/lessons/12921?language=javascript"
+        >1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수,
+        solution을 만들어 보세요.</a
+      >
+    </h2>
+    <script>
+      let n = prompt("숫자를 입력하세요");
+
+      let answer = n - 1;
+      for (let i = 2; i <= n; i++) {
+        for (let temp = 2; temp <= Math.sqrt(i); temp++) {
+          if (i % temp === 0) {
+            answer--;
+            break;
+          }
+        }
+      }
+
+      console.log(answer);
+    </script>
+  </body>
+</html>
