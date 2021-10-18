@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      5 < A < 127를 만족하는 자연수 A 중에, 이진수로 변환하였을 때, 가장 많은
+      1의 개수를 가지는 최솟값 A를 구하시오.
+    </h2>
+    <script>
+      let max = 0;
+      let maxCnt = 0;
+
+      for (let i = 6; i < 127; i++) {
+        let str = i.toString(2);
+
+        if (str.match(/1/g).length > maxCnt) {
+          max = i;
+          maxCnt = str.match(/1/g).length;
+        }
+      }
+
+      console.log(max);
+    </script>
+  </body>
+</html>
